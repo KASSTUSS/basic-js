@@ -21,8 +21,7 @@ const chainMaker = {
       !Number.isInteger(position)
     ) {
       this.links = [];
-      //throw new Error("You can\'t remove incorrect link!");
-      
+      throw Error("You can't remove incorrect link!");
     } else {
       this.links.splice(position - 1, 1);
       return this;
@@ -39,7 +38,6 @@ const chainMaker = {
   }
 };
 
-console.log(chainMaker.addLink(1).addLink(2).addLink(3).removeLink('2nd')); //( 3rd )~~( function () { } )
 module.exports = {
   chainMaker
 };
